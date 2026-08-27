@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-image:
+      linear-gradient(rgba(20,24,31,0.02) 1px, transparent 1px);
+    background-size: 100% 32px;
+  }
+}
+
+@layer components {
+  .stamp {
+    @apply inline-flex items-center gap-1 border border-teal text-teal text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rotate-[-2deg];
+  }
+  .crate-card {
+    @apply bg-white border border-line relative;
+  }
+  .crate-card::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-1 bg-navy;
+  }
+  .manifest-label {
+    @apply font-mono text-[11px] uppercase tracking-[0.15em] text-navy/60;
+  }
+}
